@@ -1,0 +1,42 @@
+<div>
+  <div class="row main" id="main">
+    <div class="col-md-12" id="neg-margin">
+      <div class="card bg-dark my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-white py-3">{{ category | titlecase}}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form class="form-inline">
+  <div class="input-group">
+    <input type="search" placeholder="Search by title" aria-describedby="button-addon1" [(ngModel)]=search name="b"
+      class="form-control border-0 bg-light">
+    <!-- <div class="input-group-append">
+      <button id="button-addon1" type="submit" class="btn btn-link text-primary">loupe<i
+          class="fa fa-search"></i></button>
+    </div> -->
+  </div>
+</form>
+
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <tr *ngFor="let task of tasks | filter: search" >
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">{{ task.name }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ task.content }}</td>
+          </tr>
+        </tbody>
+      </tr>
+      
+    </table>
+  </div>
+</div>
